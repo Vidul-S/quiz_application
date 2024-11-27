@@ -1,0 +1,61 @@
+/* General page styling */ 
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+/* Content container */
+.container {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 50px;
+    max-width: 600px;
+    width: 100%;
+}
+/* Result bar styling */
+.result-bar {
+    width: 100%; /* Keeps it within the container */
+    background-color: #e0e0e0; /* Light grey background */
+    border-radius: 10px;
+    overflow: hidden; /* Prevents inner divs from overflowing */
+    height: 30px; /* Keep the height consistent */
+    margin: 20px 0; /* Space around the result bar */
+}
+/* Correct answers segment */
+.correct {
+    background-color: #4CAF50; /* Green for correct answers */
+    height: 100%; /* Fill the height of the result bar */
+}
+/* Incorrect answers segment */
+.incorrect {
+    background-color: #D32F2F; /* Darker, more vivid red for better visibility */
+    height: 100%; /* Fill the height of the result bar */
+}
+/* Specific styling for home page and result page (centered) */
+.center {
+    text-align: center;
+}
+/* Left-align everything on the question page */
+.left-align h2, .left-align p, .left-align form {
+    text-align: left;
+}
+/* Form buttons */
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-top: 20px;
+}
+button:hover {
+    background-color: #45a049;
+}

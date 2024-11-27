@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Result</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container center">
+        <h1>Quiz Completed!</h1>
+        
+        <!-- Display percentage and result bar -->
+        <p>Your percentage: {{ percentage }}%</p>
+        <div class="result-bar">
+            <div class="correct" style="width: {{ percentage }}%;"></div>
+            <div class="incorrect" style="width: {{ 100 - percentage }}%;"></div>
+        </div>
+        
+        <!-- Display the score -->
+        <p class="result">Your score is: {{ score }} out of {{ total }}</p>
+        
+        <!-- Button to trigger review answers page -->
+        <a href="{{ url_for('review_answers') }}"><button>Review Answers</button></a>
+    </div>
+</body>
+</html>

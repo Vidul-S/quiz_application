@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Review Your Answers</title>
+</head>
+<body>
+    <h2>Review Your Answers</h2>
+    <table>
+        <tr>
+            <th>Question</th>
+            <th>Your Answer</th>
+            <th>Correct Answer</th>
+        </tr>
+        {% for item in review_data %}
+        <tr>
+            <td>{{ loop.index }}. {{ item.question }}</td>
+            <td>
+                {% if item.selected_answer %}
+                    {{ item.selected_answer }} 
+                    {% if item.selected_answer == item.correct_answer %}
+                        <span style="color: green;">✔️</span>
+                    {% else %}
+                        <span style="color: red;">❌</span>
+                    {% endif %}
+                {% else %}
+                    Not answered
+                {% endif %}
+            </td>
+            <td>{{ item.correct_answer }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="{{ url_for('home') }}">Back to Home</a>
+</body>
+</html>

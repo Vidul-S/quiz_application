@@ -1,0 +1,32 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question {{ qid }}</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <style>
+        .button-container {
+            display: flex;
+            align-items: center;
+            gap: 20px; /* Adjusts the space between buttons */
+        }
+    </style>
+</head>
+<body>
+    <div class="container left-align">
+        <h2>Question {{ qid }}</h2>
+        <p>{{ question }}</p>
+        
+        <!-- Form to submit the answer -->
+        <form action="/question" method="post">
+            {% for option in options %}
+                <input type="radio" id="{{ option }}" name="option" value="{{ option }}" required>
+                <label for="{{ option }}">{{ option }}</label><br>
+            {% endfor %}
+            <button type="submit">Next</button>
+            
+        </form>
+    </div>
+</body>
+</html>
